@@ -17,4 +17,10 @@ For the customer case the CustomerFacts will contain a primary key and 2 foreign
 
 For other models we need to add other tables such as the customerfacts in order to have custom attributes per model.
 
+---
+
 For the ruby logic.
+
+As for the ruby code I created a concern where it includes a set of attribute into each of the model and a function to check if the values of each attribute are present/not blank.
+
+the concern was included in the concern.

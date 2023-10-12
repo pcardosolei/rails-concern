@@ -18,6 +18,7 @@ class CustomAttributes < ActiveRecord::Migration[7.0]
     create_table :customer_facts do |t|
       t.references :data_attributes, foreign_key: true
       t.references :customers, foreign_key: true
+      t.references :partners, foreign_key: true
       t.string :value
       t.timestamps
 
