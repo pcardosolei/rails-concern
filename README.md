@@ -23,4 +23,4 @@ For the ruby logic.
 
 As for the ruby code I created a concern where it includes a set of attribute into each of the model and a function to check if the values of each attribute are present/not blank.
 
-the concern was included in the concern.
+the concern was included in the model.
