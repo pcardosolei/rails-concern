@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+ActiveRecord::Base.transaction do
+  data_attribute_name = DataAttribute.create!(name: 'name')
+  data_attribute_phone = DataAttribute.create!(name: 'phone_number')
+  data_attribute_capacity = DataAttribute.create!(name: 'capacity')
+
+  # Estabelecimentos
+  p_1 = Partner.create!(name: 'partner 1', created_at: Time.now, updated_at: Time.now)
+  p_2 = Partner.create!(name: 'partner 2', created_at: Time.now, updated_at: Time.now)
+
+  # Sorteios
+  c_1 = Customer.create!(name: 'customer 1', created_at: Time.now, updated_at: Time.now)
+  c_2 = Customer.create!(name: 'customer 2', created_at: Time.now, updated_at: Time.now)
+end
+
