@@ -1,4 +1,4 @@
-module DataAttributes
+module HasDynamicAttribute
   extend ActiveSupport::Concern
 
   included do

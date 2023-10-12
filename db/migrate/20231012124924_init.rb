@@ -20,6 +20,7 @@ class CustomAttributes < ActiveRecord::Migration[7.0]
       t.references :customers, foreign_key: true
       t.string :value
       t.timestamps
+
     end
   end
 end
