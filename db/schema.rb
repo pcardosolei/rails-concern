@@ -12,33 +12,36 @@
 
 ActiveRecord::Schema[7.0].define(version: 2023_10_12_124924) do
   create_table "customer_facts", force: :cascade do |t|
-    t.integer "data_attributes_id"
-    t.integer "customers_id"
-    t.string "value"
+    t.string "value", null: false
+    t.integer "data_attributes_id", null: false
+    t.integer "customers_id", null: false
+    t.integer "partners_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["customers_id"], name: "index_customer_facts_on_customers_id"
     t.index ["data_attributes_id"], name: "index_customer_facts_on_data_attributes_id"
+    t.index ["partners_id"], name: "index_customer_facts_on_partners_id"
   end
 
   create_table "customers", force: :cascade do |t|
-    t.text "name"
+    t.text "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "data_attributes", force: :cascade do |t|
-    t.text "name"
+    t.text "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "partners", force: :cascade do |t|
-    t.text "name"
+    t.text "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   add_foreign_key "customer_facts", "customers", column: "customers_id"
   add_foreign_key "customer_facts", "data_attributes", column: "data_attributes_id"
+  add_foreign_key "customer_facts", "partners", column: "partners_id"
 end
